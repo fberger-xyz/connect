@@ -5,7 +5,7 @@ export const APP_METADATA = {
     SITE_NAME: 'connect',
     SITE_INFO: 'SITE_INFO',
     SITE_DESCRIPTION: 'RabbyKit resolves conflicts between multiple wallets',
-    SITE_URL: 'https://connect-seven-snowy.vercel.app/',
+    SITE_URL: 'https://connect.fberger.xyz',
     SOCIALS: {
         TWITTER: 'fberger_xyz',
         TELEGRAM: 'fberger_xyz',
