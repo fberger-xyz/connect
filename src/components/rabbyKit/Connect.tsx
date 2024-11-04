@@ -57,28 +57,28 @@ export function ConnectOrDisconnect() {
     })
 
     return account.isConnecting ? (
-        <button className="z-50 flex items-center gap-4 rounded-md border border-very-light-hover px-2 py-0.5 hover:bg-light-hover md:px-3">
+        <button className="z-50 flex items-center gap-4 rounded-md bg-very-light-hover px-2.5 py-1.5 hover:bg-light-hover">
             <div className="size-2 rounded-full bg-orange-400" />
             <p className="font-bold">Connecting</p>
-            <IconWrapper icon={IconIds.LOADING} className="my-0.5 size-4 text-orange-400" />
+            <IconWrapper icon={IconIds.LOADING} className="size-5 text-orange-400" />
         </button>
     ) : account.isConnected ? (
         <button
-            className="group z-50 flex items-center gap-4 rounded-md border border-very-light-hover bg-light-hover px-2 py-0.5 hover:bg-light-hover md:px-3"
+            className="group z-50 flex items-center gap-4 rounded-md bg-light-hover px-2.5 py-1.5 hover:bg-light-hover"
             onClick={() => disconnect()}
         >
             <div className="size-2 rounded-full bg-green-500" />
             <p className="font-bold">{shortenAddress(String(account.address))}</p>
-            <IconWrapper icon={IconIds.DISCONNECT} className="my-0.5 size-4 text-inactive group-hover:text-red-600" />
+            <IconWrapper icon={IconIds.DISCONNECT} className="size-5 text-inactive group-hover:text-red-600" />
         </button>
     ) : (
         <button
-            className="z-50 flex items-center gap-4 rounded-md border border-very-light-hover px-2 py-0.5 text-inactive hover:bg-light-hover hover:text-default md:px-3"
+            className="z-50 flex items-center gap-4 rounded-md bg-very-light-hover px-2.5 py-1.5 text-inactive hover:bg-light-hover hover:text-default"
             onClick={() => rabbyKitRef.current?.open()}
         >
             <div className="size-2 rounded-full bg-default" />
             <p className="font-bold">Connect</p>
-            <IconWrapper icon={IconIds.WALLET} className="my-0.5 size-4" />
+            <IconWrapper icon={IconIds.WALLET} className="size-5" />
         </button>
     )
 }

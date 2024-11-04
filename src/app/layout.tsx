@@ -52,7 +52,7 @@ export default function RootLayout({
                 <ThemeProvider attribute="class" defaultTheme={AppThemes.DARK} disableTransitionOnChange themes={Object.values(AppThemes)}>
                     <WagmiAndReactQueryProviders>
                         <main className="flex size-full flex-col bg-background text-lg text-default transition-all md:text-base">
-                            <Header className="h-16 px-4 text-base sm:h-20 sm:text-lg" />
+                            <Header className="h-16 px-4 text-base sm:h-20" />
                             <Suspense
                                 fallback={
                                     <div className="flex size-full items-center justify-center">
