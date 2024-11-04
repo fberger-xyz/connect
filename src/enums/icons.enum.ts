@@ -37,4 +37,10 @@ export enum IconIds {
     // evm
     TRANSACTION = 'carbon:text-align-center',
     CONTRACT = 'carbon:cics-program',
+
+    // wallet
+    LOADING = 'line-md:loading-twotone-loop',
+    WALLET = 'carbon:wallet',
+    DISCONNECT = 'fluent:plug-disconnected-24-regular',
+    DEBANK = 'DEBANK',
 }

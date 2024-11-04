@@ -2,6 +2,7 @@ import HeaderButton from './HeaderButton'
 import { AppPagePaths } from '@/enums'
 import { cn } from '@/utils'
 import ThemeSwitcher from './ThemeSwitcher'
+import { ConnectOrDisconnect } from '../rabbyKit/Connect'
 
 export default function Header(props: { className?: string }) {
     return (
@@ -13,7 +14,10 @@ export default function Header(props: { className?: string }) {
                         <HeaderButton key={path} pagePath={path} />
                     ))}
                 </div>
-                <ThemeSwitcher />
+                <div className="z-50 flex justify-end gap-0.5 sm:gap-1">
+                    <ConnectOrDisconnect />
+                    <ThemeSwitcher />
+                </div>
             </div>
         </div>
     )

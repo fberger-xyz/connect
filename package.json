@@ -27,6 +27,7 @@
     "pino-pretty": "^11.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "react-tooltip": "^5.28.0",
     "tailwind-merge": "^2.5.2",
     "tw-colors": "^3.3.2",
