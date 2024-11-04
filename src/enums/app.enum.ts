@@ -1,6 +1,6 @@
 export enum AppPagePaths {
     HOME = '/',
-    ABOUT = '/about',
+    // ABOUT = '/about',
 }
 
 export enum AppThemes {

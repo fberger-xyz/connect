@@ -10,7 +10,6 @@ import { NetworkSwitcher } from '@/components/rabbyKit/NetworkSwitcher'
 export default function Page() {
     return (
         <PageWrapper className="mb-10 gap-5">
-            {/* <Connect /> */}
             <Connected>
                 <NetworkSwitcher />
                 <Account />

@@ -8,7 +8,7 @@ export default function Page() {
             <div className="mt-10 flex w-full flex-col items-center justify-center gap-8">
                 <LinkWrapper
                     target="_blank"
-                    href={`https://${APP_METADATA.SITE_AUTHOR}.xyz/projects/safes-trades`}
+                    href={`https://${APP_METADATA.SITE_AUTHOR}.xyz/projects/connect-rabby`}
                     className=" flex gap-1 text-default hover:text-primary"
                 >
                     <p>{APP_METADATA.SITE_DESCRIPTION}</p>
