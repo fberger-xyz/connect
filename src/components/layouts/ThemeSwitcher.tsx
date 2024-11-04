@@ -25,7 +25,7 @@ export default function ThemeSwitcher() {
                                 'text-inactive': resolvedTheme !== theme,
                             })}
                         >
-                            <IconWrapper icon={config.iconId} className="h-5 w-5" />
+                            <IconWrapper icon={config.iconId} className="size-5" />
                         </button>
                     ))}
             </div>
@@ -37,7 +37,7 @@ export default function ThemeSwitcher() {
                     .sort((curr, next) => curr[1].index - next[1].index)
                     .map(([theme, config]) => (
                         <button key={theme} className="rounded-md p-2 hover:bg-light-hover sm:px-2.5">
-                            <SvgMapper icon={config.iconId} className="h-5 w-5" />
+                            <SvgMapper icon={config.iconId} className="size-5" />
                         </button>
                     ))}
             </div>

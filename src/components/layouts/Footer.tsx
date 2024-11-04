@@ -23,16 +23,16 @@ export default function Footer(props: FooterProps) {
         <div className={cn('fixed bottom-0 w-full flex justify-end text-sm z-0', props.className)}>
             <div className="flex items-end gap-4 rounded-ss-xl bg-background p-3 text-default opacity-80 backdrop-blur-sm">
                 <LinkWrapper target="_blank" href={`https://${APP_METADATA.SITE_AUTHOR}.xyz/projects/better-farside`} className="hover:text-primary">
-                    <IconWrapper icon={IconIds.WEBSITE} className="h-5 w-5" />
+                    <IconWrapper icon={IconIds.WEBSITE} className="size-5" />
                 </LinkWrapper>
                 <LinkWrapper target="_blank" href={`https://t.me/${APP_METADATA.SOCIALS.TELEGRAM}`} className="hover:text-primary">
-                    <IconWrapper icon={IconIds.TELEGRAM} className="h-5 w-5" />
+                    <IconWrapper icon={IconIds.TELEGRAM} className="size-5" />
                 </LinkWrapper>
                 <LinkWrapper target="_blank" href={`https://x.com/${APP_METADATA.SOCIALS.TWITTER}`} className="hover:text-primary">
-                    <IconWrapper icon={IconIds.X} className="h-5 w-5" />
+                    <IconWrapper icon={IconIds.X} className="size-5" />
                 </LinkWrapper>
                 <LinkWrapper target="_blank" href={`https://www.linkedin.com/in/${APP_METADATA.SOCIALS.LINKEDIN}`} className="hover:text-primary">
-                    <IconWrapper icon={IconIds.LINKEDIN} className="h-5 w-5" />
+                    <IconWrapper icon={IconIds.LINKEDIN} className="size-5" />
                 </LinkWrapper>
             </div>
         </div>

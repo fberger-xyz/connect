@@ -10,7 +10,7 @@ export default function LinkWithIcon({ children, href }: { href: string; childre
             target="_blank"
         >
             {children}
-            <IconWrapper icon={IconIds.IC_BASELINE_OPEN_IN_NEW} className="h-3.5 w-3.5 text-inactive group-hover:text-primary" />
+            <IconWrapper icon={IconIds.IC_BASELINE_OPEN_IN_NEW} className="size-3.5 text-inactive group-hover:text-primary" />
         </LinkWrapper>
     )
 }

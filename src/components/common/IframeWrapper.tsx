@@ -17,7 +17,7 @@ const IframeWrapper: React.FC<{
         <div className={`relative ${width} ${height}`}>
             {isLoading && (
                 <div className="absolute inset-0 z-10 flex animate-pulse items-center justify-center bg-background">
-                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-secondary border-t-primary" />
+                    <div className="size-10 animate-spin rounded-full border-4 border-secondary border-t-primary" />
                 </div>
             )}
             <iframe
