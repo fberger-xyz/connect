@@ -57,14 +57,14 @@ export function ConnectOrDisconnect() {
     })
 
     return account.isConnecting ? (
-        <button className="z-50 flex items-center gap-4 rounded-md bg-very-light-hover px-2.5 py-1.5 hover:bg-light-hover">
+        <button className="z-50 flex items-center gap-3 rounded-md bg-very-light-hover px-2.5 py-1.5 hover:bg-light-hover">
             <div className="size-2 rounded-full bg-orange-400" />
             <p className="font-bold">Connecting</p>
             <IconWrapper icon={IconIds.LOADING} className="size-5 text-orange-400" />
         </button>
     ) : account.isConnected ? (
         <button
-            className="group z-50 flex items-center gap-4 rounded-md bg-light-hover px-2.5 py-1.5 hover:bg-light-hover"
+            className="group z-50 flex items-center gap-3 rounded-md bg-light-hover px-2.5 py-1.5 hover:bg-light-hover"
             onClick={() => disconnect()}
         >
             <div className="size-2 rounded-full bg-green-500" />
@@ -73,7 +73,7 @@ export function ConnectOrDisconnect() {
         </button>
     ) : (
         <button
-            className="z-50 flex items-center gap-4 rounded-md bg-very-light-hover px-2.5 py-1.5 text-inactive hover:bg-light-hover hover:text-default"
+            className="z-50 flex items-center gap-3 rounded-md bg-very-light-hover px-2.5 py-1.5 text-inactive hover:bg-light-hover hover:text-default"
             onClick={() => rabbyKitRef.current?.open()}
         >
             <div className="size-2 rounded-full bg-default" />

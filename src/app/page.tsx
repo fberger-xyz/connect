@@ -15,6 +15,7 @@ export default function Page() {
                 <Account />
                 <Balance />
                 <BlockNumber />
+                {/* todo next https://docs.login.xyz/integrations/nextauth.js */}
                 {/* <hr />
                 <h2>Read Contract</h2>
                 <ReadContract />
