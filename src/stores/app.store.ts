@@ -30,7 +30,7 @@ export const useAppStore = create<{
         {
             name: 'Protected',
             path: AppPagePaths.PROTECTED,
-            enabled: true,
+            enabled: false,
             sublinks: [],
         },
     ],

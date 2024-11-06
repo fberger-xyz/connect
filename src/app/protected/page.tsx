@@ -1,14 +1,15 @@
 import PageWrapper from '@/components/common/PageWrapper'
-// import { getServerSession } from 'next-auth/next'
-// import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { authOptions } from '@/server/auth'
+import { getServerSession } from 'next-auth/next'
+import { redirect } from 'next/navigation'
 
 export default async function Page() {
-    // const session = await getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
+    if (!session) redirect('/')
 
     return (
         <PageWrapper className="mb-10 gap-5">
             <h1>Protected page</h1>
-            {/* <pre>{JSON.stringify({ session }, null, 2)}</pre> */}
         </PageWrapper>
     )
 }
