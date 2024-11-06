@@ -27,12 +27,12 @@ export const useAppStore = create<{
             enabled: true,
             sublinks: [],
         },
-        // {
-        //     name: 'About',
-        //     path: AppPagePaths.ABOUT,
-        //     enabled: true,
-        //     sublinks: [],
-        // },
+        {
+            name: 'Protected',
+            path: AppPagePaths.PROTECTED,
+            enabled: true,
+            sublinks: [],
+        },
     ],
     actions: {},
     computeds: {},

@@ -1,7 +1,6 @@
 'use client'
 
 import { BaseError, useAccount, useConnect, useDisconnect, useConfig } from 'wagmi'
-// import { BaseError, useAccount, useConnect, useDisconnect, createConfig, http, createStorage, useConfig } from 'wagmi'
 import { useEffect, useRef } from 'react'
 import { createModal } from '@rabby-wallet/rabbykit'
 import { useTheme } from 'next-themes'
@@ -11,7 +10,7 @@ import { shortenAddress } from '@/utils'
 import toast from 'react-hot-toast'
 import { toastStyle } from '@/config/toasts.config'
 import IconWrapper from '../common/IconWrapper'
-// import { arbitrum, base, gnosis, mainnet } from 'wagmi/chains'
+import { signOut } from 'next-auth/react'
 
 export function ConnectOrDisconnect() {
     const account = useAccount()
@@ -20,16 +19,6 @@ export function ConnectOrDisconnect() {
     const { resolvedTheme } = useTheme()
     const rabbyKitRef = useRef<ReturnType<typeof createModal>>()
     const config = useConfig()
-    // const config = createConfig({
-    //     chains: [mainnet, arbitrum, base, gnosis],
-    //     storage: createStorage({ storage: window.localStorage }),
-    //     transports: {
-    //         [mainnet.id]: http('https://eth.llamarpc.com'),
-    //         [arbitrum.id]: http('https://arbitrum.llamarpc.com	'),
-    //         [base.id]: http('https://base.llamarpc.com'),
-    //         [gnosis.id]: http('https://rpc.gnosischain.com'),
-    //     },
-    // })
 
     useEffect(() => {
         if (!rabbyKitRef.current) {
@@ -65,7 +54,14 @@ export function ConnectOrDisconnect() {
     ) : account.isConnected ? (
         <button
             className="group z-50 flex items-center gap-3 rounded-md bg-light-hover px-2.5 py-1.5 hover:bg-light-hover"
-            onClick={() => disconnect()}
+            onClick={async () => {
+                try {
+                    await disconnect()
+                    await signOut()
+                } catch (error) {
+                    window.alert({ error })
+                }
+            }}
         >
             <div className="size-2 rounded-full bg-green-500" />
             <p className="font-bold">{shortenAddress(String(account.address))}</p>
@@ -76,7 +72,7 @@ export function ConnectOrDisconnect() {
             className="z-50 flex items-center gap-3 rounded-md bg-very-light-hover px-2.5 py-1.5 text-inactive hover:bg-light-hover hover:text-default"
             onClick={() => rabbyKitRef.current?.open()}
         >
-            <div className="size-2 rounded-full bg-default" />
+            <div className="size-2 rounded-full bg-inactive" />
             <p className="font-bold">Connect</p>
             <IconWrapper icon={IconIds.WALLET} className="size-5" />
         </button>
