@@ -3,5 +3,5 @@ export const toastStyle = {
     background: 'var(--color-background)',
     borderColor: 'var(--color-discreet)',
     border: 1,
-    color: 'var(--color-primary)',
+    color: 'var(--color-default)',
 }

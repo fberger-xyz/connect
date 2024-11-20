@@ -22,7 +22,7 @@ export const useAppStore = create<{
     initialized: false,
     links: [
         {
-            name: 'RabbyKit',
+            name: 'Home',
             path: AppPagePaths.HOME,
             enabled: true,
             sublinks: [],
@@ -30,7 +30,7 @@ export const useAppStore = create<{
         {
             name: 'Protected',
             path: AppPagePaths.PROTECTED,
-            enabled: false,
+            enabled: true,
             sublinks: [],
         },
     ],

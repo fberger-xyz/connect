@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Ubuntu_Mono } from 'next/font/google'
+import { Lato } from 'next/font/google'
 import './globals.css'
 import { APP_METADATA } from '../config/app.config'
 import { cn } from '../utils'
@@ -10,9 +10,11 @@ import { ThemeProvider } from 'next-themes'
 import { AppThemes } from '@/enums'
 import { WagmiAndReactQueryProviders } from '@/providers/wagmi-and-react-query.providers'
 import { NextAuthProvider } from '@/providers/next-auth.provider'
+import DefaultFallback from '@/components/layouts/DefaultFallback'
+import { Toaster } from 'react-hot-toast'
 
 // https://fonts.google.com/
-const font = Ubuntu_Mono({ weight: ['400', '700'], subsets: ['latin'] })
+const font = Lato({ weight: ['400', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
     title: APP_METADATA.SITE_NAME,
@@ -54,17 +56,12 @@ export default function RootLayout({
                     <WagmiAndReactQueryProviders>
                         <NextAuthProvider>
                             <main className="flex size-full flex-col bg-background text-lg text-default transition-all md:text-base">
-                                <Header className="h-16 px-4 text-base sm:h-20" />
-                                <Suspense
-                                    fallback={
-                                        <div className="flex size-full items-center justify-center">
-                                            <p className="text-orange-500">App loading...</p>
-                                        </div>
-                                    }
-                                >
+                                <Header />
+                                <Suspense fallback={<DefaultFallback />}>
                                     <div className="h-full overflow-scroll">{children}</div>
                                 </Suspense>
                                 <Footer />
+                                <Toaster position="bottom-center" reverseOrder={false} />
                             </main>
                         </NextAuthProvider>
                     </WagmiAndReactQueryProviders>

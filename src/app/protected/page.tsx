@@ -5,7 +5,9 @@ import { redirect } from 'next/navigation'
 
 export default async function Page() {
     const session = await getServerSession(authOptions)
-    if (!session) redirect('/')
+    if (!session) {
+        redirect('/?unauthorized=true')
+    }
 
     return (
         <PageWrapper className="mb-10 gap-5">

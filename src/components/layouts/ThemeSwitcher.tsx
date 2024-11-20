@@ -13,31 +13,31 @@ export default function ThemeSwitcher() {
     useEffect(() => setMounted(true), [])
     if (mounted) {
         return (
-            <div className="z-50 flex items-center gap-0.5 rounded-md sm:gap-1">
+            <div className="z-50 flex items-center gap-0.5 rounded-md sm:gap-1 lg:gap-2">
                 {Object.entries(APP_THEMES)
                     .sort((curr, next) => curr[1].index - next[1].index)
                     .map(([theme, config]) => (
                         <button
                             key={theme}
                             onClick={() => setTheme(theme)}
-                            className={cn('rounded-md px-2 sm:px-2.5 py-2 hover:bg-light-hover', {
+                            className={cn('rounded-md px-2 sm:px-2.5 py-1.5 hover:bg-light-hover', {
                                 'bg-light-hover text-primary': resolvedTheme === theme,
                                 'text-inactive': resolvedTheme !== theme,
                             })}
                         >
-                            <IconWrapper icon={config.iconId} className="size-5" />
+                            <IconWrapper icon={config.iconId} className="size-4 md:size-5" />
                         </button>
                     ))}
             </div>
         )
     } else
         return (
-            <div className="z-50 flex items-center rounded-md sm:gap-1">
+            <div className="z-50 flex items-center rounded-md sm:gap-1 lg:gap-2">
                 {Object.entries(APP_THEMES)
                     .sort((curr, next) => curr[1].index - next[1].index)
                     .map(([theme, config]) => (
-                        <button key={theme} className="rounded-md p-2 hover:bg-light-hover sm:px-2.5">
-                            <SvgMapper icon={config.iconId} className="size-5" />
+                        <button key={theme} className="rounded-md px-2 py-1.5 hover:bg-light-hover sm:px-2.5">
+                            <SvgMapper icon={config.iconId} className="size-4 md:size-5" />
                         </button>
                     ))}
             </div>

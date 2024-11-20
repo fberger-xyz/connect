@@ -33,7 +33,7 @@ export function ConnectOrDisconnect() {
         }
     }, [config])
     useEffect(() => {
-        if (account.status === 'connected') toast.success('Connected', { style: toastStyle })
+        if (account.status === 'connected') toast.success(`Connected wallet ${shortenAddress(account.address)}`, { style: toastStyle })
         else if (account.status === 'connecting') toast('Connecting...', { style: toastStyle })
         else if (account.status === 'disconnected') toast('Disconnected', { style: toastStyle })
     }, [account.status])
@@ -46,14 +46,14 @@ export function ConnectOrDisconnect() {
     })
 
     return account.isConnecting ? (
-        <button className="z-50 flex items-center gap-3 rounded-md bg-very-light-hover px-2.5 py-1.5 hover:bg-light-hover">
+        <button className="z-50 flex items-center gap-2.5 rounded-md bg-very-light-hover px-2.5 py-0.5 hover:bg-light-hover">
             <div className="size-2 rounded-full bg-orange-400" />
-            <p className="font-bold">Connecting</p>
-            <IconWrapper icon={IconIds.LOADING} className="size-5 text-orange-400" />
+            <p className="text-inactive">Connecting</p>
+            <IconWrapper icon={IconIds.LOADING} className="size-4 text-orange-400" />
         </button>
     ) : account.isConnected ? (
         <button
-            className="group z-50 flex items-center gap-3 rounded-md bg-light-hover px-2.5 py-1.5 hover:bg-light-hover"
+            className="group z-50 flex items-center gap-2.5 rounded-md bg-light-hover px-2.5 py-0.5 hover:bg-light-hover"
             onClick={async () => {
                 try {
                     await disconnect()
@@ -64,17 +64,17 @@ export function ConnectOrDisconnect() {
             }}
         >
             <div className="size-2 rounded-full bg-green-500" />
-            <p className="font-bold">{shortenAddress(String(account.address))}</p>
+            <p className="">{shortenAddress(String(account.address))}</p>
             <IconWrapper icon={IconIds.DISCONNECT} className="size-5 text-inactive group-hover:text-red-600" />
         </button>
     ) : (
         <button
-            className="z-50 flex items-center gap-3 rounded-md bg-very-light-hover px-2.5 py-1.5 text-inactive hover:bg-light-hover hover:text-default"
+            className="z-50 flex items-center gap-2.5 rounded-md bg-very-light-hover px-2.5 py-0.5 text-inactive hover:bg-light-hover hover:text-default"
             onClick={() => rabbyKitRef.current?.open()}
         >
             <div className="size-2 rounded-full bg-inactive" />
-            <p className="font-bold">Connect</p>
-            <IconWrapper icon={IconIds.WALLET} className="size-5" />
+            <p className="">Connect</p>
+            <IconWrapper icon={IconIds.WALLET} className="size-4" />
         </button>
     )
 }
