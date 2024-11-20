@@ -34,8 +34,8 @@ export function ConnectOrDisconnect() {
     }, [config])
     useEffect(() => {
         if (account.status === 'connected') toast.success(`Connected wallet ${shortenAddress(account.address)}`, { style: toastStyle })
-        else if (account.status === 'connecting') toast('Connecting...', { style: toastStyle })
-        else if (account.status === 'disconnected') toast('Disconnected', { style: toastStyle })
+        // else if (account.status === 'connecting') toast('Connecting...', { style: toastStyle })
+        // else if (account.status === 'disconnected') toast('Disconnected', { style: toastStyle })
     }, [account.status])
     useEffect(() => {
         if (error) toast.error(`Wallet error: ${(error as BaseError).shortMessage}`, { style: toastStyle })
