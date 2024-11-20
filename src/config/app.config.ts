@@ -6,7 +6,7 @@ export const APP_METADATA = {
     SITE_DESCRIPTION: 'RabbyKit resolves conflicts between multiple wallets',
     SITE_URL: 'https://connect.fberger.xyz',
     SOCIALS: {
-        TWITTER: 'fberger_xyz',
+        X: 'fberger_xyz',
         TELEGRAM: 'fberger_xyz',
         LINKEDIN: 'francis-berger-a2404094',
     },
